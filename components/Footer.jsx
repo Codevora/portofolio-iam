@@ -1,3 +1,13 @@
+import {
+ FiMail,
+ FiPhone,
+ FiMapPin,
+ FiInstagram,
+ FiDribbble,
+ FiLinkedin,
+ FiYoutube,
+} from "react-icons/fi";
+
 export default function Footer() {
  const currentYear = new Date().getFullYear();
 
@@ -7,8 +17,7 @@ export default function Footer() {
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
      {/* Brand Info */}
      <div className="lg:col-span-2">
-      <div className="text-2xl font-bold gradient-text mb-4 flex items-center">
-       <span className="mr-2">✨</span>
+      <div className="text-2xl font-bold gradient-text mb-4">
        SocialDesign Specialist
       </div>
       <p className="text-gray-400 mb-6">
@@ -17,18 +26,17 @@ export default function Footer() {
       </p>
       <div className="flex space-x-4">
        {[
-        {name: "Instagram", icon: "📷", url: "#"},
-        {name: "Behance", icon: "🎨", url: "#"},
-        {name: "Dribbble", icon: "✨", url: "#"},
-        {name: "LinkedIn", icon: "💼", url: "#"},
-        {name: "TikTok", icon: "🎵", url: "#"},
+        {name: "Instagram", icon: <FiInstagram />, url: "#"},
+        {name: "Dribbble", icon: <FiDribbble />, url: "#"},
+        {name: "LinkedIn", icon: <FiLinkedin />, url: "#"},
+        {name: "YouTube", icon: <FiYoutube />, url: "#"},
        ].map((social, index) => (
         <a
          key={index}
          href={social.url}
-         className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors"
+         className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors text-lg"
          aria-label={social.name}>
-         <span className="text-lg">{social.icon}</span>
+         {social.icon}
         </a>
        ))}
       </div>
@@ -62,15 +70,15 @@ export default function Footer() {
       <h3 className="text-lg font-bold mb-4 text-primary">Get In Touch</h3>
       <div className="space-y-3">
        <div className="flex items-center">
-        <span className="mr-3">📧</span>
+        <FiMail className="mr-3 text-primary" />
         <span className="text-gray-400">hello@socialdesign.com</span>
        </div>
        <div className="flex items-center">
-        <span className="mr-3">📱</span>
+        <FiPhone className="mr-3 text-primary" />
         <span className="text-gray-400">@socialdesignspecialist</span>
        </div>
        <div className="flex items-center">
-        <span className="mr-3">📍</span>
+        <FiMapPin className="mr-3 text-primary" />
         <span className="text-gray-400">Jakarta, Indonesia</span>
        </div>
       </div>

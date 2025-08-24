@@ -1,6 +1,15 @@
 "use client";
 
 import {useState} from "react";
+import {
+ FiMail,
+ FiPhone,
+ FiMapPin,
+ FiInstagram,
+ FiLinkedin,
+ FiDribbble,
+ FiYoutube,
+} from "react-icons/fi";
 
 export default function Contact() {
  const [formData, setFormData] = useState({
@@ -19,7 +28,6 @@ export default function Contact() {
 
  const handleSubmit = (e) => {
   e.preventDefault();
-  // Handle form submission here
   console.log(formData);
   alert(
    "Terima kasih! Saya akan menghubungi Anda segera untuk diskusi project Anda."
@@ -120,8 +128,8 @@ export default function Contact() {
        </div>
        <button
         type="submit"
-        className="w-full py-3 bg-primary rounded-lg font-medium hover:bg-accent transition-colors">
-        Kirim Pesan
+        className="w-full py-3 bg-primary rounded-lg font-medium hover:bg-accent transition-colors flex items-center justify-center">
+        <FiMail className="mr-2" /> Kirim Pesan
        </button>
       </form>
      </div>
@@ -133,7 +141,7 @@ export default function Contact() {
        <div className="space-y-4">
         <div className="flex items-center">
          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-          <span>📧</span>
+          <FiMail className="text-primary" />
          </div>
          <div>
           <div className="font-medium">Email</div>
@@ -142,7 +150,7 @@ export default function Contact() {
         </div>
         <div className="flex items-center">
          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-          <span>📱</span>
+          <FiPhone className="text-primary" />
          </div>
          <div>
           <div className="font-medium">WhatsApp/Instagram</div>
@@ -151,7 +159,7 @@ export default function Contact() {
         </div>
         <div className="flex items-center">
          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-          <span>📍</span>
+          <FiMapPin className="text-primary" />
          </div>
          <div>
           <div className="font-medium">Lokasi</div>
@@ -168,17 +176,17 @@ export default function Contact() {
        <h3 className="text-xl font-bold mb-4">Follow My Work</h3>
        <div className="flex space-x-4">
         {[
-         {name: "Instagram", icon: "📷", url: "#"},
-         {name: "Behance", icon: "🎨", url: "#"},
-         {name: "Dribbble", icon: "✨", url: "#"},
-         {name: "TikTok", icon: "🎵", url: "#"},
+         {name: "Instagram", icon: <FiInstagram />, url: "#"},
+         {name: "Dribbble", icon: <FiDribbble />, url: "#"},
+         {name: "LinkedIn", icon: <FiLinkedin />, url: "#"},
+         {name: "YouTube", icon: <FiYoutube />, url: "#"},
         ].map((social, index) => (
          <a
           key={index}
           href={social.url}
-          className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors"
+          className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors text-xl"
           aria-label={social.name}>
-          <span className="text-xl">{social.icon}</span>
+          {social.icon}
          </a>
         ))}
        </div>

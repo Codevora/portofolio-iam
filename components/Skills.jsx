@@ -1,3 +1,5 @@
+import {FiTool, FiAward, FiStar} from "react-icons/fi";
+
 export default function Skills() {
  const skills = [
   {name: "Social Media Strategy", level: 95},
@@ -9,12 +11,12 @@ export default function Skills() {
  ];
 
  const tools = [
-  {name: "Adobe Photoshop", icon: "🎨"},
-  {name: "Adobe Illustrator", icon: "✏️"},
-  {name: "Canva", icon: "📱"},
-  {name: "Figma", icon: "🖌️"},
-  {name: "CapCut", icon: "🎬"},
-  {name: "Meta Business Suite", icon: "📊"},
+  {name: "Adobe Photoshop", icon: <FiTool />},
+  {name: "Adobe Illustrator", icon: <FiTool />},
+  {name: "Canva", icon: <FiTool />},
+  {name: "Figma", icon: <FiTool />},
+  {name: "CapCut", icon: <FiTool />},
+  {name: "Meta Business Suite", icon: <FiTool />},
  ];
 
  return (
@@ -33,7 +35,9 @@ export default function Skills() {
     <div className="flex flex-col lg:flex-row gap-12">
      {/* Skills Progress */}
      <div className="lg:w-1/2">
-      <h3 className="text-2xl font-bold mb-6">Skills Proficiency</h3>
+      <h3 className="text-2xl font-bold mb-6 flex items-center">
+       <FiAward className="mr-2 text-primary" /> Skills Proficiency
+      </h3>
       <div className="space-y-6">
        {skills.map((skill, index) => (
         <div key={index}>
@@ -53,13 +57,15 @@ export default function Skills() {
 
      {/* Tools & Technologies */}
      <div className="lg:w-1/2">
-      <h3 className="text-2xl font-bold mb-6">Tools & Software</h3>
+      <h3 className="text-2xl font-bold mb-6 flex items-center">
+       <FiTool className="mr-2 text-primary" /> Tools & Software
+      </h3>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
        {tools.map((tool, index) => (
         <div
          key={index}
          className="glass p-4 rounded-lg text-center group hover:bg-primary/20 transition-colors">
-         <div className="text-3xl mb-2">{tool.icon}</div>
+         <div className="text-2xl mb-2 flex justify-center">{tool.icon}</div>
          <div className="font-medium">{tool.name}</div>
         </div>
        ))}
@@ -67,7 +73,9 @@ export default function Skills() {
 
       {/* Services */}
       <div className="mt-8">
-       <h3 className="text-xl font-bold mb-4">Services Offered</h3>
+       <h3 className="text-xl font-bold mb-4 flex items-center">
+        <FiStar className="mr-2 text-primary" /> Services Offered
+       </h3>
        <div className="grid grid-cols-1 gap-3">
         {[
          "Social Media Management",

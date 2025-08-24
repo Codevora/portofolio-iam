@@ -1,4 +1,5 @@
 import Image from "next/image";
+import {FiCheck, FiArrowRight} from "react-icons/fi";
 
 export default function Hero() {
  return (
@@ -20,8 +21,8 @@ export default function Hero() {
       <div className="flex flex-wrap gap-4">
        <a
         href="#portfolio"
-        className="px-6 py-3 bg-primary rounded-lg font-medium hover:bg-accent transition-colors">
-        Lihat Portfolio
+        className="px-6 py-3 bg-primary rounded-lg font-medium hover:bg-accent transition-colors flex items-center">
+        Lihat Portfolio <FiArrowRight className="ml-2" />
        </a>
        <a
         href="#contact"
