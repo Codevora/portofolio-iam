@@ -71,22 +71,24 @@ export default function Footer() {
       <div className="space-y-3">
        <div className="flex items-center">
         <FiMail className="mr-3 text-primary" />
-        <span className="text-gray-400">hello@socialdesign.com</span>
+        <span className="text-gray-400">kenzyworld29@gmail.com</span>
        </div>
        <div className="flex items-center">
         <FiPhone className="mr-3 text-primary" />
-        <span className="text-gray-400">@socialdesignspecialist</span>
+        <span className="text-gray-400">(+62) 877-4615-6529</span>
        </div>
        <div className="flex items-center">
         <FiMapPin className="mr-3 text-primary" />
-        <span className="text-gray-400">Jakarta, Indonesia</span>
+        <span className="text-gray-400">
+         Kota Tasikmalaya, Indonesia (Remote Available)
+        </span>
        </div>
       </div>
      </div>
     </div>
 
     {/* Copyright */}
-    <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+    {/*<div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
      <div className="text-gray-400 text-sm mb-4 md:mb-0">
       © {currentYear} SocialDesign Specialist. All rights reserved.
      </div>
@@ -102,7 +104,7 @@ export default function Footer() {
        Terms of Service
       </a>
      </div>
-    </div>
+    </div>*/}
    </div>
   </footer>
  );

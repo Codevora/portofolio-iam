@@ -226,7 +226,7 @@ export default function Contact() {
          </div>
          <div>
           <div className="font-medium">WhatsApp</div>
-          <div className="text-gray-400">+62 877-4615-6529</div>
+          <div className="text-gray-400">(+62) 877-4615-6529</div>
          </div>
         </div>
         <div className="flex items-center">
@@ -251,7 +251,11 @@ export default function Contact() {
          {name: "Instagram", icon: <FiInstagram />, url: "#"},
          {name: "Dribbble", icon: <FiDribbble />, url: "#"},
          {name: "LinkedIn", icon: <FiLinkedin />, url: "#"},
-         {name: "YouTube", icon: <FiYoutube />, url: "#"},
+         {
+          name: "YouTube",
+          icon: <FiYoutube />,
+          url: "https://www.youtube.com/@Joaquine999",
+         },
         ].map((social, index) => (
          <a
           key={index}

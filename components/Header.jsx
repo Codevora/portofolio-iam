@@ -14,9 +14,8 @@ export default function Header() {
   <header className="fixed top-0 w-full glass z-50">
    <div className="container mx-auto px-4 py-4">
     <div className="flex justify-between items-center">
-     <div className="text-2xl font-bold gradient-text flex items-center">
-      <span className="mr-2">✨</span>
-      SocialDesign
+     <div className="text-2xl font-bold text-white flex items-center">
+      My.<span className="gradient-text">Portfolio</span>
      </div>
 
      {/* Desktop Navigation */}
