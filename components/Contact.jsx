@@ -9,6 +9,7 @@ import {
  FiLinkedin,
  FiDribbble,
  FiYoutube,
+ FiSend,
 } from "react-icons/fi";
 
 export default function Contact() {
@@ -19,6 +20,9 @@ export default function Contact() {
   message: "",
  });
 
+ const [isSubmitting, setIsSubmitting] = useState(false);
+ const [isSubmitted, setIsSubmitted] = useState(false);
+
  const handleChange = (e) => {
   setFormData({
    ...formData,
@@ -26,13 +30,35 @@ export default function Contact() {
   });
  };
 
- const handleSubmit = (e) => {
+ const handleSubmit = async (e) => {
   e.preventDefault();
-  console.log(formData);
-  alert(
-   "Terima kasih! Saya akan menghubungi Anda segera untuk diskusi project Anda."
-  );
-  setFormData({name: "", email: "", service: "", message: ""});
+  setIsSubmitting(true);
+
+  // Ganti YOUR_FORMSPREE_ID dengan ID Formspree Anda
+  const formspreeEndpoint = "https://formspree.io/f/mvgrnvqz";
+
+  try {
+   const response = await fetch(formspreeEndpoint, {
+    method: "POST",
+    headers: {
+     "Content-Type": "application/json",
+    },
+    body: JSON.stringify(formData),
+   });
+
+   if (response.ok) {
+    setIsSubmitted(true);
+    setFormData({name: "", email: "", service: "", message: ""});
+    setTimeout(() => setIsSubmitted(false), 5000); // Reset status setelah 5 detik
+   } else {
+    alert("Terjadi kesalahan. Silakan coba lagi.");
+   }
+  } catch (error) {
+   console.error("Error:", error);
+   alert("Terjadi kesalahan. Silakan coba lagi.");
+  } finally {
+   setIsSubmitting(false);
+  }
  };
 
  return (
@@ -47,6 +73,14 @@ export default function Contact() {
      Tertarik untuk mengembangkan brand Anda di media sosial dengan konten
      visual yang menarik? Mari berbicara!
     </p>
+
+    {/* Success Message */}
+    {isSubmitted && (
+     <div className="bg-green-500/20 border border-green-500 text-green-300 px-4 py-3 rounded-lg mb-6 text-center">
+      ✅ Terima kasih! Pesan Anda telah terkirim. Saya akan menghubungi Anda
+      segera.
+     </div>
+    )}
 
     <div className="flex flex-col lg:flex-row gap-12">
      {/* Contact Form */}
@@ -101,13 +135,41 @@ export default function Contact() {
          onChange={handleChange}
          required
          className="w-full px-4 py-3 glass rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
-         <option value="">Pilih Layanan</option>
-         <option value="social-media">Social Media Management</option>
-         <option value="graphic-design">Graphic Design</option>
-         <option value="content-strategy">Content Strategy</option>
-         <option value="branding">Brand Identity</option>
-         <option value="campaign">Social Media Campaign</option>
-         <option value="other">Lainnya</option>
+         <option
+          value=""
+          className=" text-black">
+          Pilih Layanan
+         </option>
+         <option
+          value="social-media"
+          className=" text-black">
+          Social Media Management
+         </option>
+         <option
+          value="graphic-design"
+          className=" text-black">
+          Graphic Design
+         </option>
+         <option
+          value="content-strategy"
+          className=" text-black">
+          Content Strategy
+         </option>
+         <option
+          value="branding"
+          className=" text-black">
+          Brand Identity
+         </option>
+         <option
+          value="campaign"
+          className=" text-black">
+          Social Media Campaign
+         </option>
+         <option
+          value="other"
+          className=" text-black">
+          Lainnya
+         </option>
         </select>
        </div>
        <div>
@@ -128,8 +190,18 @@ export default function Contact() {
        </div>
        <button
         type="submit"
-        className="w-full py-3 bg-primary rounded-lg font-medium hover:bg-accent transition-colors flex items-center justify-center">
-        <FiMail className="mr-2" /> Kirim Pesan
+        disabled={isSubmitting}
+        className="w-full py-3 bg-primary rounded-lg font-medium hover:bg-accent transition-colors flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed">
+        {isSubmitting ? (
+         <>
+          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+          Mengirim...
+         </>
+        ) : (
+         <>
+          <FiSend className="mr-2" /> Kirim Pesan
+         </>
+        )}
        </button>
       </form>
      </div>
@@ -145,7 +217,7 @@ export default function Contact() {
          </div>
          <div>
           <div className="font-medium">Email</div>
-          <div className="text-gray-400">hello@socialdesign.com</div>
+          <div className="text-gray-400">kenzyworld29@gmail.com</div>
          </div>
         </div>
         <div className="flex items-center">
@@ -153,8 +225,8 @@ export default function Contact() {
           <FiPhone className="text-primary" />
          </div>
          <div>
-          <div className="font-medium">WhatsApp/Instagram</div>
-          <div className="text-gray-400">@socialdesignspecialist</div>
+          <div className="font-medium">WhatsApp</div>
+          <div className="text-gray-400">+62 877-4615-6529</div>
          </div>
         </div>
         <div className="flex items-center">
@@ -164,7 +236,7 @@ export default function Contact() {
          <div>
           <div className="font-medium">Lokasi</div>
           <div className="text-gray-400">
-           Jakarta, Indonesia (Remote Available)
+           Kota Tasikmalaya, Indonesia (Remote Available)
           </div>
          </div>
         </div>
