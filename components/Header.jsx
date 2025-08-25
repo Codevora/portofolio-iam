@@ -1,10 +1,30 @@
 "use client";
 
+import Link from "next/link";
+import {useRouter} from "next/navigation";
 import {useState} from "react";
-import {FiHome, FiFolder, FiAward, FiMail, FiMenu, FiX} from "react-icons/fi";
+import {
+ FiHome,
+ FiFolder,
+ FiAward,
+ FiMail,
+ FiMenu,
+ FiX,
+ FiDownload,
+} from "react-icons/fi";
 
 export default function Header() {
  const [isMenuOpen, setIsMenuOpen] = useState(false);
+ const router = useRouter();
+
+ const handleDownloadCV = () => {
+  const link = document.createElement("a");
+  link.href = "/profile/CV_Ilham_Ali_Wardiana.pdf";
+  link.download = "CV_Ilham_Ali_Wardiana_Social_Media_Specialist.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+ };
 
  const toggleMenu = () => {
   setIsMenuOpen(!isMenuOpen);
@@ -20,26 +40,31 @@ export default function Header() {
 
      {/* Desktop Navigation */}
      <nav className="hidden md:flex space-x-8">
-      <a
+      <Link
        href="#home"
-       className="hover:text-primary transition-colors flex items-center">
+       className="hover:text-[#883aea] transition-colors flex items-center">
        <FiHome className="mr-1" /> Home
-      </a>
-      <a
+      </Link>
+      <Link
        href="#portfolio"
-       className="hover:text-primary transition-colors flex items-center">
+       className="hover:text-[#883aea] transition-colors flex items-center">
        <FiFolder className="mr-1" /> Portfolio
-      </a>
-      <a
+      </Link>
+      <Link
        href="#skills"
-       className="hover:text-primary transition-colors flex items-center">
+       className="hover:text-[#883aea] transition-colors flex items-center">
        <FiAward className="mr-1" /> Skills
-      </a>
-      <a
+      </Link>
+      <Link
        href="#contact"
-       className="hover:text-primary transition-colors flex items-center">
+       className="hover:text-[#883aea] transition-colors flex items-center">
        <FiMail className="mr-1" /> Contact
-      </a>
+      </Link>
+      <button
+       onClick={handleDownloadCV}
+       className="hover:text-[#883aea] transition-colors flex items-center bg-transparent border-none cursor-pointer">
+       <FiDownload className="mr-1" /> Download CV
+      </button>
      </nav>
 
      {/* Mobile Menu Button */}
@@ -59,30 +84,30 @@ export default function Header() {
     {isMenuOpen && (
      <nav className="md:hidden mt-4 pb-4">
       <div className="flex flex-col space-y-4">
-       <a
+       <Link
         href="#home"
         className="hover:text-primary transition-colors flex items-center py-2"
         onClick={() => setIsMenuOpen(false)}>
         <FiHome className="mr-2" /> Home
-       </a>
-       <a
+       </Link>
+       <Link
         href="#portfolio"
         className="hover:text-primary transition-colors flex items-center py-2"
         onClick={() => setIsMenuOpen(false)}>
         <FiFolder className="mr-2" /> Portfolio
-       </a>
-       <a
+       </Link>
+       <Link
         href="#skills"
         className="hover:text-primary transition-colors flex items-center py-2"
         onClick={() => setIsMenuOpen(false)}>
         <FiAward className="mr-2" /> Skills
-       </a>
-       <a
+       </Link>
+       <Link
         href="#contact"
         className="hover:text-primary transition-colors flex items-center py-2"
         onClick={() => setIsMenuOpen(false)}>
         <FiMail className="mr-2" /> Contact
-       </a>
+       </Link>
       </div>
      </nav>
     )}

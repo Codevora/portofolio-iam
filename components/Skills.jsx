@@ -1,4 +1,5 @@
 import {FiTool, FiAward, FiStar} from "react-icons/fi";
+import {SiAdobeillustrator, SiAdobephotoshop, SiAdobepremierepro, SiCanva, SiMeta} from "react-icons/si";
 
 export default function Skills() {
  const skills = [
@@ -11,12 +12,12 @@ export default function Skills() {
  ];
 
  const tools = [
-  {name: "Adobe Photoshop", icon: <FiTool />},
-  {name: "Adobe Illustrator", icon: <FiTool />},
-  {name: "Canva", icon: <FiTool />},
-  {name: "Figma", icon: <FiTool />},
+  {name: "Adobe Photoshop", icon: <SiAdobephotoshop />},
+  {name: "Adobe Illustrator", icon: <SiAdobeillustrator />},
+  {name: "Canva", icon: <SiCanva />},
+  {name: "Adobe Premiere Pro", icon: <SiAdobepremierepro />},
   {name: "CapCut", icon: <FiTool />},
-  {name: "Meta Business Suite", icon: <FiTool />},
+  {name: "Meta Business Suite", icon: <SiMeta />},
  ];
 
  return (

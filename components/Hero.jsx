@@ -1,5 +1,6 @@
 import Image from "next/image";
-import {FiCheck, FiArrowRight} from "react-icons/fi";
+import Link from "next/link";
+import {FiArrowRight} from "react-icons/fi";
 
 export default function Hero() {
  return (
@@ -19,16 +20,16 @@ export default function Hero() {
        untuk meningkatkan brand presence di media sosial.
       </p>
       <div className="flex flex-wrap gap-4">
-       <a
+       <Link
         href="#portfolio"
         className="px-6 py-3 bg-primary rounded-lg font-medium hover:bg-accent transition-colors flex items-center">
-        Lihat Portfolio <FiArrowRight className="ml-2" />
-       </a>
-       <a
+        Lihat Portofolio <FiArrowRight className="ml-2" />
+       </Link>
+       <Link
         href="#contact"
         className="px-6 py-3 glass rounded-lg font-medium hover:bg-white/10 transition-colors">
         Hubungi Saya
-       </a>
+       </Link>
       </div>
      </div>
      <div className="md:w-1/2 flex justify-center animate-float">
@@ -51,9 +52,9 @@ export default function Hero() {
     {/* Social Media Stats */}
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
      {[
-      {number: "500+", label: "Designs Created"},
+      {number: "150+", label: "Designs Created"},
       {number: "120%", label: "Engagement Rate"},
-      {number: "80+", label: "Clients Satisfied"},
+      {number: "80%", label: "Reduced Costs"},
       {number: "2M+", label: "Total Reach"},
      ].map((stat, index) => (
       <div

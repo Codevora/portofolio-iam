@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {useState} from "react";
 import {
  FiMail,
@@ -49,7 +50,7 @@ export default function Contact() {
    if (response.ok) {
     setIsSubmitted(true);
     setFormData({name: "", email: "", service: "", message: ""});
-    setTimeout(() => setIsSubmitted(false), 5000); // Reset status setelah 5 detik
+    setTimeout(() => setIsSubmitted(false), 5000);
    } else {
     alert("Terjadi kesalahan. Silakan coba lagi.");
    }
@@ -248,7 +249,11 @@ export default function Contact() {
        <h3 className="text-xl font-bold mb-4">Follow My Work</h3>
        <div className="flex space-x-4">
         {[
-         {name: "Instagram", icon: <FiInstagram />, url: "#"},
+         {
+          name: "Instagram",
+          icon: <FiInstagram />,
+          url: "https://instagram.com/simp4iammm/",
+         },
          {name: "Dribbble", icon: <FiDribbble />, url: "#"},
          {name: "LinkedIn", icon: <FiLinkedin />, url: "#"},
          {
@@ -257,13 +262,15 @@ export default function Contact() {
           url: "https://www.youtube.com/@Joaquine999",
          },
         ].map((social, index) => (
-         <a
+         <Link
           key={index}
           href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
           className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors text-xl"
           aria-label={social.name}>
           {social.icon}
-         </a>
+         </Link>
         ))}
        </div>
       </div>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import {
  FiMail,
  FiPhone,
@@ -26,18 +27,28 @@ export default function Footer() {
       </p>
       <div className="flex space-x-4">
        {[
-        {name: "Instagram", icon: <FiInstagram />, url: "#"},
+        {
+         name: "Instagram",
+         icon: <FiInstagram />,
+         url: "https://instagram.com/simp4iammm/",
+        },
         {name: "Dribbble", icon: <FiDribbble />, url: "#"},
         {name: "LinkedIn", icon: <FiLinkedin />, url: "#"},
-        {name: "YouTube", icon: <FiYoutube />, url: "#"},
+        {
+         name: "YouTube",
+         icon: <FiYoutube />,
+         url: "https://www.youtube.com/@Joaquine999",
+        },
        ].map((social, index) => (
-        <a
+        <Link
+         target="_blank"
+         rel="noopener noreferrer"
          key={index}
          href={social.url}
          className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors text-lg"
          aria-label={social.name}>
          {social.icon}
-        </a>
+        </Link>
        ))}
       </div>
      </div>
@@ -55,11 +66,11 @@ export default function Footer() {
         "Visual Content Production",
        ].map((service, index) => (
         <li key={index}>
-         <a
+         <Link
           href="#services"
           className="text-gray-400 hover:text-primary transition-colors">
           {service}
-         </a>
+         </Link>
         </li>
        ))}
       </ul>
