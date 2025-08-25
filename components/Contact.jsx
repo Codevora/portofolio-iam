@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import {useState} from "react";
+import {FaTiktok} from "react-icons/fa";
 import {
  FiMail,
  FiPhone,
@@ -223,15 +224,6 @@ export default function Contact() {
         </div>
         <div className="flex items-center">
          <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
-          <FiPhone className="text-primary" />
-         </div>
-         <div>
-          <div className="font-medium">WhatsApp</div>
-          <div className="text-gray-400">(+62) 877-4615-6529</div>
-         </div>
-        </div>
-        <div className="flex items-center">
-         <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mr-4">
           <FiMapPin className="text-primary" />
          </div>
          <div>
@@ -254,8 +246,16 @@ export default function Contact() {
           icon: <FiInstagram />,
           url: "https://instagram.com/simp4iammm/",
          },
-         {name: "Dribbble", icon: <FiDribbble />, url: "#"},
-         {name: "LinkedIn", icon: <FiLinkedin />, url: "#"},
+         {
+          name: "Dribbble",
+          icon: <FaTiktok />,
+          url: "https://www.tiktok.com/@aidenhaileyy?_t=ZS-8zAYG4bJCRL&_r=1",
+         },
+         {
+          name: "LinkedIn",
+          icon: <FiLinkedin />,
+          url: "https://www.linkedin.com/in/ilham-ali-wardiana-46a547380?utm_source=share&utm_campaign=share_via&utm_content=profile&ut-m_medium=ios_app",
+         },
          {
           name: "YouTube",
           icon: <FiYoutube />,
@@ -267,7 +267,7 @@ export default function Contact() {
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors text-xl"
+          className="w-12 h-12 rounded-full glass flex items-center justify-center hover:bg-primary/20 hover:text-[#883aea] transition-colors text-xl"
           aria-label={social.name}>
           {social.icon}
          </Link>

@@ -108,6 +108,11 @@ export default function Header() {
         onClick={() => setIsMenuOpen(false)}>
         <FiMail className="mr-2" /> Contact
        </Link>
+       <button
+        onClick={handleDownloadCV}
+        className="hover:text-[#883aea] transition-colors flex items-center bg-transparent border-none cursor-pointer">
+        <FiDownload className="mr-1" /> Download CV
+       </button>
       </div>
      </nav>
     )}

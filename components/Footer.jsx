@@ -1,13 +1,12 @@
 import Link from "next/link";
 import {
  FiMail,
- FiPhone,
  FiMapPin,
  FiInstagram,
- FiDribbble,
  FiLinkedin,
  FiYoutube,
 } from "react-icons/fi";
+import {FaTiktok} from "react-icons/fa";
 
 export default function Footer() {
  const currentYear = new Date().getFullYear();
@@ -19,7 +18,7 @@ export default function Footer() {
      {/* Brand Info */}
      <div className="lg:col-span-2">
       <div className="text-2xl font-bold gradient-text mb-4">
-       SocialDesign Specialist
+       Social Design Specialist
       </div>
       <p className="text-gray-400 mb-6">
        Menciptakan pengalaman visual yang menarik dan strategi media sosial yang
@@ -32,8 +31,16 @@ export default function Footer() {
          icon: <FiInstagram />,
          url: "https://instagram.com/simp4iammm/",
         },
-        {name: "Dribbble", icon: <FiDribbble />, url: "#"},
-        {name: "LinkedIn", icon: <FiLinkedin />, url: "#"},
+        {
+         name: "Dribbble",
+         icon: <FaTiktok />,
+         url: "https://www.tiktok.com/@aidenhaileyy?_t=ZS-8zAYG4bJCRL&_r=1",
+        },
+        {
+         name: "LinkedIn",
+         icon: <FiLinkedin />,
+         url: "https://www.linkedin.com/in/ilham-ali-wardiana-46a547380?utm_source=share&utm_campaign=share_via&utm_content=profile&ut-m_medium=ios_app",
+        },
         {
          name: "YouTube",
          icon: <FiYoutube />,
@@ -45,7 +52,7 @@ export default function Footer() {
          rel="noopener noreferrer"
          key={index}
          href={social.url}
-         className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-primary/20 transition-colors text-lg"
+         className="w-10 h-10 rounded-full glass flex items-center justify-center hover:bg-[#883aea] hover:text-[#883aea] transition-colors text-lg"
          aria-label={social.name}>
          {social.icon}
         </Link>
@@ -68,7 +75,7 @@ export default function Footer() {
         <li key={index}>
          <Link
           href="#services"
-          className="text-gray-400 hover:text-primary transition-colors">
+          className="text-gray-400 hover:text-[#883aea] transition-colors">
           {service}
          </Link>
         </li>
@@ -83,10 +90,6 @@ export default function Footer() {
        <div className="flex items-center">
         <FiMail className="mr-3 text-primary" />
         <span className="text-gray-400">kenzyworld29@gmail.com</span>
-       </div>
-       <div className="flex items-center">
-        <FiPhone className="mr-3 text-primary" />
-        <span className="text-gray-400">(+62) 877-4615-6529</span>
        </div>
        <div className="flex items-center">
         <FiMapPin className="mr-3 text-primary" />
