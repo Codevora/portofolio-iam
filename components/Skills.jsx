@@ -23,7 +23,7 @@ export default function Skills() {
  return (
   <section
    id="skills"
-   className="py-16 bg-gradient-to-br from-black to-dark">
+   className="py-16 bg-black">
    <div className="container mx-auto px-4">
     <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
      Skills & <span className="gradient-text">Expertise</span>

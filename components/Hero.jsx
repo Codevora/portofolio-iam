@@ -6,7 +6,7 @@ export default function Hero() {
  return (
   <section
    id="home"
-   className="min-h-screen flex items-center pt-20 pb-16 bg-gradient-to-br from-dark to-black">
+   className="min-h-screen flex items-center pt-20 pb-16 bg-black">
    <div className="container mx-auto px-4">
     <div className="flex flex-col md:flex-row items-center justify-between">
      <div className="md:w-1/2 mb-10 md:mb-0 animate-slide-in">
